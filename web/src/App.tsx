@@ -1,6 +1,6 @@
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import type {FormEvent} from 'react';
-import {Activity,ArrowRight,CheckCircle2,ChevronLeft,ChevronRight,Clock3,FolderKanban,ListFilter,Plus,RefreshCw,Search,ShieldCheck,Users,Workflow,X} from 'lucide-react';
+import {Activity,ArrowRight,CheckCircle2,ChevronLeft,ChevronRight,Clock3,FolderKanban,ListFilter,Plus,RefreshCw,Search,ShieldCheck,Workflow,X} from 'lucide-react';
 import {ApiError,NexoraClient,type ItemInput} from './api';
 import {Banner,Empty,SectionHeading,Shell,type Tab} from './components';
 import type {Account,AuditEvent,Dashboard,Priority,Project,Role,Session,Status,WorkItem} from './types';
