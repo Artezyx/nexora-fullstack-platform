@@ -122,7 +122,7 @@ export function App(){
     <select aria-label="Filtrar por proyecto" value={projectFilter} onChange={e=>{setProjectFilter(e.target.value);setPage(1)}}><option value="">Todos los proyectos</option>{projects.map(p=><option value={p.id} key={p.id}>{p.name}</option>)}</select>
     <select aria-label="Filtrar por estado" value={statusFilter} onChange={e=>{setStatusFilter(e.target.value);setPage(1)}}><option value="">Todos los estados</option>{statuses.map(s=><option key={s} value={s}>{s}</option>)}</select>
    </div>
-   <div className="board">{boardColumns.map(({status,columnItems},i)=><div className="board-column" key={status}>
+   <div className="board">{boardColumns.map(({status,items:columnItems},i)=><div className="board-column" key={status}>
     <div className="column-head"><span className={`column-indicator ci-${i}`}/><strong>{({Backlog:'Pendientes',Active:'En curso',Review:'Revisión',Done:'Finalizadas'} as Record<Status,string>)[status]}</strong><span className="count-pill">{columnItems.length}</span></div>
     <div className="task-stack">{columnItems.map(item=><article className="task-card" key={item.id}>
      <div className="task-tag"><PriorityPill priority={item.priority}/><span>#{item.id.slice(0,7)}</span></div>
