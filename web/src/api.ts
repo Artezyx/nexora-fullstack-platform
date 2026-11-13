@@ -20,7 +20,7 @@ export class NexoraClient{
   const token=this.getToken();
   const response=await fetch(endpoint,{
    ...options,
-   headers:{Accept:'application/json',...(options?.body?{'Content-Type':'application/json'}:{}),...(token?{Authorization:`Bearer ${token}}:{}),...options?.headers}
+   headers:{Accept:'application/json',...(options?.body?{'Content-Type':'application/json'}:{}),...(token?{Authorization:`Bearer ${token}`}:{}),...options?.headers}
   });
   if(!response.ok){
    const body:unknown=await response.json().catch(()=>null);
